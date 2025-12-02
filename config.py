@@ -1,6 +1,7 @@
-class Config:
-    SECRET_KEY = "any-secret-key"
-    SQLALCHEMY_DATABASE_URI = "sqlite:///students.db"
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+import os
+from dotenv import load_dotenv
+from openai import OpenAI
 
-    DEEPSEEK_API_KEY = "sk-6593617bb211460e970c0fad37c2014e"
+load_dotenv()   # loads .env file
+
+client = OpenAI(api_key=os.getenv("DEEPSEEK_API_KEY"))
